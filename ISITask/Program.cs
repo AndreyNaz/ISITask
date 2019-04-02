@@ -1,12 +1,26 @@
 ﻿using System;
+using System.Numerics;
 
-namespace ISITask
+namespace Factorial
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            BigInteger num = BigInteger.Parse(Console.ReadLine());
+            Console.WriteLine(FindFactorial(num));
+        }
+
+        static BigInteger FindFactorial(BigInteger num)
+        {
+            BigInteger factorial = 1;
+
+            for (BigInteger i = num; i > 0; i--)
+            {
+                factorial *= i;
+            }
+
+            return factorial;
         }
     }
 }
